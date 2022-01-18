@@ -11,7 +11,7 @@ const body = document.querySelector('body');
 const labelNumber = document.querySelector('.number');
 
 let score = 20;
-let highscore;
+let highscore = 0;
 let randomNumber = Math.floor(Math.random() * 20) + 1;
 
 labelNumber.textContent = randomNumber;
@@ -28,7 +28,10 @@ btnCheck.addEventListener('click', function () {
     labelMessage.textContent = 'Number too low!';
     if (score < 1) score = 0;
     labelScore.textContent = score;
+
   } else {
     labelMessage.textContent = 'You won the game!';
+    if (score > highscore) labelHighscore.textContent = highscore = score;
+    inputGuess.value = '';
   }
 });
