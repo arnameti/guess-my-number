@@ -43,3 +43,12 @@ btnCheck.addEventListener('click', function () {
 });
 
 
+btnAgain.addEventListener('click', function() {
+  highscore === 20 ? labelHighscore.textContent = highscore = 0 : labelHighscore.textContent = highscore;
+  document.querySelector('body').style.backgroundColor = '#222';
+  labelNumber.style.width = '15rem';
+  playing = true;
+  labelNumber.textContent = randomNumber = Math.floor(Math.random() * 20) + 1;
+  score = 20;
+  labelScore.textContent = score;
+});
